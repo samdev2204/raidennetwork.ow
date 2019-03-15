@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+  <head>
+  <title>Raiden Network</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Raiden Network is an off-chain scaling solution, enabling near-instant, low-fee and scalable payments.">
+  <meta charset="UTF-8"> <!--Encoding -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!--Movile first -->
+
+  <link  rel="icon" href="../favicon.ico">
+  <!--JQuery -->
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  
+  <link rel="stylesheet" type="text/css" href=/css/materialize.min.css>
+  <script type="text/javascript" src=/js/materialize.min.js></script>
+  <script type="text/javascript" src=/js/inicializate.js></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href=/css/style.css>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <!-- Plugin CSS -->
+  <link rel="stylesheet" href="css/animate.min.css" type="text/css">
+
+   <!-- Custom scrollbar -->
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+</head>
+  <body>
+    <style>
+      .brand-logo img {
+        height: 40px;
+        margin: 12px 0;
+      }
+      .bug-bounty-btn {
+        border-radius: 11.5px;
+        box-shadow: 0 0 1.5px 0 rgba(0, 0, 0, 0.16);
+        background-image: linear-gradient(to right, #90e9fa, #00d4ff);
+        color: white;
+        font-family: 'Roboto', sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 2.2;
+        text-align: left;
+        color: #ffffff;
+        border-radius: 40px;
+        margin: 0 15px;
+      }
+      #bounty-modal p {
+        text-align: center;
+        color: black;
+      }
+      .sidenav-overlay {
+        z-index: 900 !important;
+      }
+    </style>
+    <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo"><img src="./assets/logo-black.png"/></a>
+        <a href="#" data-target="mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+
+        <ul class="right hide-on-med-and-down valign-wrapper">
+          <li><a class="bug-bounty-btn" href="/bug-bounty.html">Bug bounty</a></li>
+          <li><a href="https://explorer.raiden.network/" target="_blank">Explorer</a></li>
+          <li><a href="/101.html">Raiden 101</a></li>
+          <li><a href="/micro.html">µRaiden</a></li>
+          <li><a href="/roadmap.html">Roadmap</a></li>
+          <li><a href="/token.html">Token</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
+        </ul>
+        <ul class="sidenav" id="mobile">
+          <li><a href="/bug-bounty.html">Bug bounty</a></li>
+          <li><a href="https://explorer.raiden.network/" target="_blank">Explorer</a></li>
+          <li><a href="/101.html">Raiden 101</a></li>
+          <li><a href="/micro.html">µRaiden</a></li>
+          <li><a href="/roadmap.html">Roadmap</a></li>
+          <li><a href="/token.html">Token</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+    <body id="page-top">
+  <style>
+  .faq-page {
+    padding: 3px 0 0 0 !important;
+  }
+  #sidebar h3 {
+    font-family: Roboto;
+    font-size: 19px;
+    line-height: 1.54;
+    text-align: left;
+    color: #5f5f5f;
+    padding-left: 10px;
+    margin-bottom: 0px;
+  }
+  #sidebar ul {
+    margin-top: 0;
+  }
+  
+  #sidebar a {
+    color: #5f5f5f;
+  }
+  
+</style>
+
+<section class="faq-page">
+  <div data-spy="scroll" data-target="#sidebar" class="row container grey" style="margin-left: 0px">
+    <section id="sidebar" data-mcs-theme="minimal-dark" class="faq-sidebar col m3 l3 custom-scrollbar grey">
+      <h3>Raiden Overview</h3>
+      <ul class="nav">
+        <li class="faq-nav">
+          <a href="#raiden">What is Raiden?</a>
+        </li>
+        <li class="faq-nav">
+          <a href="#raidennetwork">What is the Raiden Network?</a>
+        </li>
+        <li class="faq-nav">
+          <a href="#solutions">Which problems does the Raiden Network solve?</a>
+        </li>
+        <li class="faq-nav" style="list-style-type: square;">
+          <a href="#scalability" class="secondary">Scalability</a>
+        </li>
+        <li class="faq-nav" style="color:black">
+          <a href="#latency" class="secondary">Latency</a>
+        </li>
+        <li class="faq-nav">
+          <a href="#transactionfees" class="secondary">Transaction fees</a>
+        </li>
+        <li class="faq-nav">
+          <a href="#privacy" class="secondary">Improving privacy</a>
+        </li>
+        <li class="faq-nav">
+          <a href="#microraiden">What is μRaiden?</a>
+        </li>
+        <li class="faq-nav">
+          <a href="#ELI5">ELI5, how does the Raiden Network work?</a>
+        </li>
+        <li class="faq-nav">
+          <a href="#paymentchannel">What is a payment channel?</a>
+        </li>
+        <li class="faq-nav">
+          <a href="#network">Why is the Raiden Network a network?</a>
+        </li>
+      </ul>
+      <h3>State & Vision</h3>
+      <ul class="nav">
+        <li class="faq-nav">
+          <a href="#project">What is the status of the Raiden project?</a>
+        </li>
+        <li class="faq-nav">
+          <a href="#itworks">Will the Raiden Network actually work?</a>
+        </li>
+        <li class="faq-nav">
+          <a href="#efficiency" class="secondary">"Routing cannot be performed efficiently."</a>
+        </li>
+        <li class="faq-nav">
+          <a href="#liquidity" class="secondary">"Intermediate transfers create a bottleneck on liquidity due to locked up tokens."</a>
+        </li>
+        <li class="faq-nav">
+          <a href="#largetransfers" class="secondary">"The Raiden Network cannot support large transfers."</a>
+        </li>
+        <li class="faq-nav">
+          <a href="#centralized" class="secondary">"Natural wealth distribution will cause a centralized network."</a>
+        </li>
+        <li class="faq-nav">
+          <a href="#time" class="secondary">"Channels degrade over time."</a>
+        </li>
+        <li class="faq-nav">
+          <a href="#unresponsive" class="secondary">"Nodes may become unresponsive."</a>
+        </li>
+      </ul>
+      <h3>Fees</h3>
+      <ul class="nav">
+        <li class="faq-nav">
+          <a href="#networkfees">Are there fees in the Raiden Network?</a>
+        </li>
+        <li class="faq-nav">
+          <a href="#token">Will there be a dedicated token for the Raiden Network?</a>
+        </li>
+        <li class="faq-nav">
+          <a href="#spam">Is the Raiden Network spam-resistant?</a>
+        </li>
+      </ul>
+      <h3>Other Questions</h3>
+      <ul class="nav">
+        <li class="faq-nav">
+          <a href="#ETH">Can ETH be transferred over the Raiden Network?</a>
+        </li>
+          <li class="faq-nav">
+          <a href="#native">Why does the Raiden Network support ERC20 tokens rather than native Ether?</a>
+        </li>
+        <li class="faq-nav">
+          <a href="#whitepaper">Is there a white paper?</a>
+        </li>
+        <li class="faq-nav">
+          <a href="#developersdevelopersdevelopers">Who is developing Raiden?</a>
+        </li>
+      </ul>
+      <h3>Comparison to other projects</h3>
+      <ul class="nav">
+        <li class="faq-nav">
+          <a href="#lightning">How is it different from the Lightning Network?</a>
+        </li>
+        <li class="faq-nav">
+          <a href="#sharding">How is it different from Sharding?</a>
+        </li>
+        <li class="faq-nav">
+          <a href="#plasma">How is it different from Plasma?</a>
+        </li>
+        <li class="faq-nav">
+          <a href="#tangle">How is it different from IOTA’s tangle?</a>
+        </li>
+        <li class="faq-nav">
+          <a href="#raidex">How is the project related to the Raidex decentralized exchange?</a>
+        </li>
+        <li class="faq-nav">
+          <a href="#trustlines">How is the project related to the Trustlines Network?</a>
+        </li>
+        <li class="faq-nav">
+          <a href="#interoperability">Can the Raiden Network be used with other blockchains?</a>
+        </li>
+      </ul>
+    </section>
+    <section data-spy="scroll" data-offset="100" id="parent" class="faq-content col offset-l3 l9 m9 s12 custom-scrollbar">
+      <div>
+        <h1 style="margin-top: 0;">Raiden Overview</h1>
+        <div id="raiden">
+          <h2><span class="first-line-span">.</span> What is Raiden?</h2>
+          <div>
+            <p class="medium">
+              Raiden is an <a href="https://github.com/raiden-network/raiden">open source</a> project that aims to scale Ethereum by using state channel technology.
+            </p>
+          </div>
+        </div>
+        <div id="raidennetwork">
+          <h2><span class="first-line-span">.</span> What is the Raiden Network?</h2>
+          <div>
+            <div>
+              <p class="medium">
+                The Raiden Network is an off-chain transfer network for Ethereum ERC20 tokens. It provides a fast, scalable, and cheap alternative to on-chain token transfers. At the same time, Raiden Network transfers provide users with guarantees of finality, security, and decentralization similar to those known from blockchains.</p>
+            </div>
+          </div>
+        </div>
+        <div id="solutions">
+          <h2><span class="first-line-span">.</span> Which problems does the Raiden Network solve?</h2>
+          <div>
+            <p class="medium">
+             The Raiden Network is a technology that leverages off-chain payment channel networks to address these substantial issues on the Ethereum blockchain:
+            </p>
+          </div>
+        </div>
+
+        <div id="scalability">
+          <h3>Scalability</h3>
+          <div>
+            <p class="medium">
+              Blockchains do not scale well. Current public, permissionless blockchains are unable to achieve more than a low, fixed number of transactions per second. Ethereum has been shown to reach its cap at about 10 transactions per second. Short-term scaling solutions, like raising maximum computation performed per block by a constant factor, will not be able to support continued mainstream adoption.
+            </p>
+            <p class="medium">
+              The Raiden Network will provide a payment system based on payment channel technology that scales with the number of its users. This means that the bigger the Raiden Network becomes, the higher its maximum throughput will be, with practically no upper limit in sight.
+
+            </p>
+          </div>
+        </div>
+
+        <div id="latency">
+          <h3>Latency</h3>
+          <div>
+            <p class="medium">
+             Blockchains are slow. At the moment, Ethereum mines a new block approximately every 15 to 30 seconds. To reach practical finality of a transaction, confirmation times of several minutes have to be endured. This significantly degrades user experience and hinders mainstream adoption.
+            </p>
+            <p class="medium">
+             Raiden Network transfers are as fast as text messages. The moment you receive a signed Raiden transfer, you can be certain that you now hold the amount included in the transfer. There is no need to wait for any confirmations.
+            </p>
+          </div>
+        </div>
+
+        <div id="transactionfees">
+          <h3>Transaction fees</h3>
+          <div>
+            <p class="medium">
+              Using blockchains is expensive. Once a blockchain hits its limit, paying high enough fees to be included in a block becomes a competitive endeavor, as is the case with Bitcoin today. Ethereum will be no different, eventually leading to even higher confirmation times and transaction fees on the order of a few dollars per transaction. For the vision of a global, decentralized, and dependable computer this is highly detrimental.
+            </p>
+            <p class="medium">
+              Raiden Network transfer fees will be several orders of magnitude lower than on-chain transaction fees. Instead of paying for global consensus, you only pay for forwarding peer-to-peer consensus. Low fees allow for a long tail of new use cases which have not been practical before due to high transaction costs. Especially IoT and the Machine-to-Machine economy depend on being able to transfer tiny values. Raiden aims to be the predominant payment layer for these applications.
+            </p>
+          </div>
+        </div>
+
+        <div id="privacy">
+          <h3>Improving privacy</h3>
+          <div>
+            <p class="medium">
+              Ethereum transactions are public, whereas Raiden transfers will be private between the payer, the payee, and the nodes forwarding the transfer. When channels are settled, only the sum of transactions will become visible to the entire world.
+            </p>
+          </div>
+        </div>
+
+        <div id="microraiden">
+          <h2><span class="first-line-span">.</span> What is μRaiden?</h2>
+          <div>
+            <p class="medium">
+              μRaiden (Micro Raiden) shares some properties with the Raiden Network. It can provide trustless, instant and free transfers between two parties. It is intended for many-to-one payment setups, like users interacting with a Dapp. However, it is not suitable for many-to-many payment setups as it requires users to lock up tokens upfront for every potential payee. This limitation comes with reduced technological complexity, allowing µRaiden to be used on the mainnet today.
+            </p>
+          </div>
+        </div>
+
+        <div id="ELI5">
+          <h2><span class="first-line-span">.</span> ELI5, how does the Raiden Network work?</h2>
+          <div>
+            <p class="medium">
+             If you think of a blockchain as a universally trusted but very slow bank that charges you for wire transfers, then the Raiden Network offers checks that will never bounce back when cashed at that bank. Once you receive a Raiden check from someone, you can be absolutely certain that this check is real and that you are now richer than you were moments ago. But neither you nor your payer had to stand in line at the bank or wait for the clerk to perform a wire transfer. You can decide to cash this check at the bank at any time, potentially with hundreds and thousands of other checks simultaneously and you only need to pay fees once when turning all of these checks in. If your payer had instead made a single wire transfer per payment, he would have paid a lot more in fees and both of you would have waited a lot longer for a confirmation. As a side-effect, the bank is happy too because this system significantly reduces internal workload.
+            </p>
+            <p class="medium">
+              What's more, you don't even need to be in contact with the person that wants to give you a check. It is entirely sufficient if you know someone who knows someone who eventually knows someone that knows this other person. They all pass checks on to each other until one finally reaches you. But all of them are only valid if you confirm to everyone that you have received yours in the end.
+            </p>
+            <p class="medium">
+              The Raiden Network will take care of connecting you and your partner through this network of bank customers and will make sure that all checks are as binding as actually visiting the blockchain bank for a transfer.
+            </p>
+          </div>
+        </div>
+
+        <div id="paymentchannel">
+          <h2><span class="first-line-span">.</span> What is a payment channel?</h2>
+          <div>
+            <p class="medium">
+             Payment channels are a technology that enables off-chain transfers of on-chain tokens. This works by first depositing the tokens in a payment channel contract. Then, transfers can be performed by sending signed messages directly between two parties without any involvement of the blockchain itself. Therefore, transaction frequency is only limited by the hardware of sender and receiver. But best of all, there are literally no transaction fees, other than for a one-time on-chain deposit and eventual settlement.
+            </p>
+            <p class="medium">
+              Since only the two participants have access to the deposit in the payment channel's smart contract, payment channel transfers are immune to double-spending attacks, <strong>making them as secure as on-chain transactions</strong>.
+            </p>
+          </div>
+        </div>
+
+        <div id="network">
+          <h2><span class="first-line-span">.</span> Why is the Raiden Network a network?</h2>
+          <div>
+            <p class="medium">
+              For every payment channel, tokens have to be deposited and are subsequently locked for the lifetime of the channel. It is easy to see that this makes opening payment channels with everyone infeasible: A huge amount of tokens would be required.
+            </p>
+            <p class="medium">
+              Instead, Raiden creates a network connecting all participants transitively through routes of payment channels. As long as there exists a route connecting payer and payee, the Raiden Network will enable token transfers just as if they were directly connected. This way, every participant only has to open a few channels, but will still able to transfer to any other peer.
+            </p>
+          </div>
+        </div>
+
+        <h1>State & Vision</h1>
+        <div id="project">
+          <h2><span class="first-line-span">.</span> What is the status of the Raiden project?</h2>
+          <div>
+            <p class="medium">
+             Raiden currently consists of two phases of development: µRaiden and the Raiden Network.
+            </p>
+            <p class="medium">
+              There is a working implementation of µRaiden, which supports a subset of the functionality of the Raiden Network and is currently <a href="https://raiden.network/micro.html">live</a> on the Ethereum mainnet.
+            </p>
+            <p class="medium">
+             The Raiden Network is still in development. You can find the latest status of Raiden's development <a href="https://github.com/raiden-network/raiden/milestones">here</a>. and deploy the latest version of the software <a href="https://github.com/raiden-network/raiden/releases">here</a>.
+            </p>
+            <p>On a more general note, you can always check the current state of development at our <a href="https://github.com/raiden-network/raiden">GitHub</a>.</p>
+          </div>
+        </div>
+        <div id="itworks">
+          <h2><span class="first-line-span">.</span> Will the Raiden Network actually work?</h2>
+          <div>
+            <p class="medium">
+              The Raiden Network already works in its current state. Transfers can be sent instantly to any participant in the network using a simple routing mechanism and intermediate transfers.
+            </p>
+            <p class="medium">
+              We are, however, aware of criticism surrounding the idea of networks like Lightning and Raiden. We want to address some of the most common ones here.
+            </p>
+          </div>
+        </div>
+        <div id="efficiency">
+          <h3>"Routing cannot be performed efficiently."</h3>
+          <div>
+            <p class="medium">
+              Scalable Routing is indeed one of the biggest issues of payment channel networks. There is a trade-off between centralization, privacy, and efficiency. Simulations have shown that our approach of combining a Kademlia-like structured network with a federation of path finding helpers allows for efficient and scalable path finding while preserving decentralization and privacy.
+            </p>
+          </div>
+        </div>
+        <div id="liquidity">
+          <h3>"Intermediate transfers create a bottleneck on liquidity due to locked up tokens."</h3>
+          <div>
+            <p class="medium">
+              This is not the case. While it is true that for the duration of a Raiden transfer, intermediate tokens are locked up and cannot be used elsewhere, this has no noticeable effect on network liquidity. The time it takes for a transfer to be completed is on the order of tenths of a second with configurable timeouts to account for failing nodes. When you decide to forward a transfer, it will be a matter of at most a few seconds to regain control over your locked up tokens.
+            </p>
+            <p class="medium">
+              Additionally, as long as you have enough tokens deposited in your channel, you can forward multiple transfers at the same time. Each node can forward many transfers per second, depending on their deposits.
+            </p>
+          </div>
+        </div>
+        <div id="largetransfers">
+          <h3>"The Raiden Network cannot support large transfers."</h3>
+          <div>
+            <p class="medium">
+              This is partially true. The Raiden Network is not intended to support large value transfers. A Raiden transfer requires each channel on a route through the network to be able to relay the desired amount. The bigger a transfer, the lower the probability that there is a route of channels, each of which is able to support the transfer. Currently, we recommend to perform large-scale transfers on-chain. In the future, large transfers might simply be split up over multiple channels.
+            </p>
+          </div>
+        </div>
+        <div id="centralized">
+          <h3>"Natural wealth distribution will cause a centralized network."</h3>
+          <div>
+            <p class="medium">
+              It is true that larger nodes will relay significantly more transfers than smaller nodes, having more channels and higher deposits. However, intermediary nodes cannot cheat, no matter how big they are. Nor do bigger nodes prevent smaller ones from participating in the network. The moment nodes stop accepting or forwarding transfers is the moment they stop being nodes to the rest of the network. It might very well be possible that wealthy institutions provide large transfer hubs to make a profit on transfer fees but this will only support the network with liquidity and competitive fees, not endanger its decentralization.
+            </p>
+          </div>
+        </div>
+        <div id="time">
+          <h3>"Channels degrade over time."</h3>
+          <div>
+            <p class="medium">
+              This is only true in a naive system design. Without further systems in place, channels will become imbalanced over time. However, channels can be automatically rebalanced through proper incentivization. Nodes can adjust their forwarding fees in such a way that their channels remain balanced. Our simulations show that this alone helps to prolong channel longevity by a great deal.
+            </p>
+          </div>
+        </div>
+        <div id="unresponsive">
+          <h3>"Nodes may become unresponsive."</h3>
+          <div>
+            <p class="medium">
+              This is entirely expected and is an issue that is handled gracefully in just about any modern peer-to-peer protocol. The Raiden Network is no exception. Nodes going offline will cause the Raiden Network to route transfers around that node within milliseconds.
+              </p>
+            <p class="medium">
+            While the network itself is resilient against unresponsive nodes, individual participants could be attacked if they go offline: Their channels may be closed fraudulently, requiring challenges that they would be unable to submit. For this reason, payment channels have challenge periods, meaning that down times would not directly allow for an attack. Additionally, third parties providing a challenging service will ensure that participants can safely go offline.
+            </p>
+          </div>
+        </div>
+
+        <h1>Fees</h1>
+        <div id="networkfees">
+          <h2><span class="first-line-span">.</span> Are there fees in the Raiden Network?</h2>
+          <div>
+            <p class="medium">Yes, there are two kinds of fees in the Raiden Network:</p>
+              <ol>
+                <li>Protocol level fees</li>
+                <li>Peripheral fees</li>
+              </ol>
+            <p class="medium">
+             Protocol level fees are necessary to keep the payment channel network balanced. Nodes will use fees to prevent their channels from being depleted over time. These fees will be comparatively small and be denominated in the token that is transferred in the channel.
+            </p>
+            <p class="medium">
+              Peripheral fees will be payable to services in the network that, for example, assist with finding a path with sufficient capacity or services that provide channel monitoring services for offline users. Users running these services themselves will not need to pay these fees but can earn them instead. It is assumed that >95% of all nodes on the network will be light-clients happy to pay tiny fees for the convenience of not having to run the full stack of services.
+            </p>
+          </div>
+        </div>
+        <div id="token">
+          <h2><span class="first-line-span">.</span> Will there be a Raiden Network token?</h2>
+          <div>
+            <p class="medium">
+              Yes, peripheral services will be paid for in RDN tokens, a virtual currency dedicated to pay for services within the Raiden Network. Note that this token is not at the core of the protocol and only used by participants who opt to pay for the convenience of not having to run a full node.
+            </p>
+          </div>
+        </div>
+        <div id="spam">
+          <h2><span class="first-line-span">.</span> Is the Raiden Network spam-resistant?</h2>
+          <div>
+            <p class="medium">
+             Yes, spamming a single node does not harm the network as a whole. Nodes throttle their connections and will disconnect spammers.
+            </p>
+          </div>
+        </div>
+        <h1>Other Questions</h1>
+        <div id="ETH">
+          <h2><span class="first-line-span">.</span> Can ETH be transferred over the Raiden Network?</h2>
+          <div>
+            <p class="medium">
+              Yes. While ETH currently does not qualify as an ERC20 token, simple wrapper contracts exist that allow ETH to be treated just like an ERC20 token.
+            </p>
+          </div>
+        </div>
+         <div id="native">
+          <h2><span class="first-line-span">.</span> Why does the Raiden Network support ERC20 tokens rather than native Ether?</h2>
+          <div>
+            <p class="medium">
+             Making the Raiden Network compatible with ERC20 tokens allows many different token networks to be created and thus, many different token transfers to be compiled using the Raiden Network. Supporting ERC20 tokens enables the network to possibly support atomic swaps in the future, too. When wrapped into an ERC20 token, native Ether <a href="#ETH">can be added as well</a>.
+            </p>
+          </div>
+        </div>
+        <div id="whitepaper">
+          <h2><span class="first-line-span">.</span> Is there a white paper?</h2>
+          <div>
+            <p class="medium">
+             Unfortunately not yet. We have been busy researching and developing the software. But a protocol specification is in the making and at some point the final design will be presented in a white paper.
+            </p>
+          </div>
+        </div>
+        <div id="developersdevelopersdevelopers">
+          <h2><span class="first-line-span">.</span> Who is developing Raiden?</h2>
+          <div>
+            <p class="medium">
+             Raiden is developed by brainbot, a company deeply committed to the Ethereum ecosystem.
+            </p>
+          </div>
+        </div>
+        <h1>Comparison to other projects</h1>
+        <div id="lightning">
+          <h2><span class="first-line-span">.</span> How is it different from the Lightning Network?</h2>
+          <div>
+            <p class="medium">
+              The Raiden Network is very similar to the <a rel="noopener noreferrer" href="https://lightning.network/" target="_blank">Lightning Network</a>. In contrast to the Lightning Network, the Raiden Network supports all ERC20 tokens instead of being limited to the transfer
+              of BTCs.
+            </p>
+          </div>
+        </div>
+        <div id="sharding">
+          <h2><span class="first-line-span">.</span> How is it different from Sharding?</h2>
+          <div>
+            <p class="medium">
+              <a rel="noopener noreferrer" href="https://github.com/ethereum/wiki/wiki/Sharding-FAQ" target="_blank">Sharding</a> will allow Ethereum to significantly scale overall transaction capacity, basically by partitioning state over multiple chains. It’s a very important
+              and needed improvement which is complementary to the Raiden Network. While sharding helps to scale, it will still have suboptimal latency, cost and privacy properties for token transfers, compared to the Raiden Network. In order to scale
+              token transfer capacity using shards, cross-shard communication is necessary, which is expected to be even slower and similarly expensive as transfers on Ethereum. While sharding is important, it is not an optimal solution for token transfers.
+            </p>
+          </div>
+        </div>
+        <div id="plasma">
+          <h2><span class="first-line-span">.</span> How is it different from Plasma?</h2>
+          <div>
+            <p class="medium"><a rel="noopener noreferrer" href="http://plasma.io/" target="_blank">Plasma</a> is a proposed concept to scale transaction capacity using hierarchical trees of side chains. Similar to sharding, it will not be able to provide the latency and low fee properties as provided
+              by the Raiden Network. Implementations of Plasma will be complementary to the Raiden Network.
+            </p>
+          </div>
+        </div>
+        <div id="tangle">
+          <h2><span class="first-line-span">.</span> How is it different from IOTA’s tangle?</h2>
+          <div>
+            <p class="medium">
+              Tangles are a new, interesting technology. Some aspects of them, however, are not clear.
+            </p>
+            <p class="medium">
+              Concerning token transfers, current implementations of tangles require a lot of computational resources because transaction mining and validation are combined into a single process. This makes them largely unfit for less powerful systems such as smartphones
+              or IoT devices. In contrast, Raiden transfers are quick to create, requiring only a single elliptic curve signature to be computed.
+            </p>
+          </div>
+        </div>
+        <div id="raidex">
+          <h2><span class="first-line-span">.</span> How is the project related to the <a href="http://raidex.io">RaidEX</a> decentralized exchange?</h2>
+          <div>
+            <p class="medium">
+              RaidEX is a Proof-of-Concept of a decentralized exchange built on top the Raiden Network based on its atomic token swap feature.
+            </p>
+          </div>
+        </div>
+        <div id="trustlines">
+          <h2><span class="first-line-span">.</span> How is the project related to the <a href="http://trustlines.network">Trustlines Network</a>?</h2>
+          <div>
+            <p class="medium">
+              The Trustlines Network implements the original <a href="https://ripple.com/">Ripple</a> idea on Ethereum. Both projects are based on the idea of channel networks and are complementary. At some point, Trustlines could be built on top of the
+              Raiden Network.
+            </p>
+          </div>
+        </div>
+        <div id="interoperability">
+          <h2><span class="first-line-span">.</span> Can the Raiden Network be used with other blockchains?</h2>
+          <div>
+            <p class="medium">
+              Blockchains supporting the Ethereum Virtual Machine will be able to use the Raiden Network after manual modification to work with their API. While this is not a focus of current development, it is reasonable to expect the Raiden Network to work with Polkadot,
+              Dfinitiy, Cosmo, Hyperledger Burrow, EOS and others.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
+
+  <!-- jQuery -->
+<script src="js/jquery.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/jquery.fittext.js"></script>
+<script src="js/wow.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="js/creative.js"></script>
+
+<!-- Scroll the FAQ -->
+<script src="js/smooth-scroll.js"></script>
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<script>
+  $("#frontNav").removeClass("affix-top").addClass("affix")
+</script>
+
+
+  </body>
+</html>

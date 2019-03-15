@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+  <head>
+  <title>Raiden Network</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Raiden Network is an off-chain scaling solution, enabling near-instant, low-fee and scalable payments.">
+  <meta charset="UTF-8"> <!--Encoding -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!--Movile first -->
+
+  <link  rel="icon" href="../favicon.ico">
+  <!--JQuery -->
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  
+  <link rel="stylesheet" type="text/css" href=/css/materialize.min.css>
+  <script type="text/javascript" src=/js/materialize.min.js></script>
+  <script type="text/javascript" src=/js/inicializate.js></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href=/css/style.css>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <!-- Plugin CSS -->
+  <link rel="stylesheet" href="css/animate.min.css" type="text/css">
+
+   <!-- Custom scrollbar -->
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+</head>
+  <body>
+    <style>
+      .brand-logo img {
+        height: 40px;
+        margin: 12px 0;
+      }
+      .bug-bounty-btn {
+        border-radius: 11.5px;
+        box-shadow: 0 0 1.5px 0 rgba(0, 0, 0, 0.16);
+        background-image: linear-gradient(to right, #90e9fa, #00d4ff);
+        color: white;
+        font-family: 'Roboto', sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 2.2;
+        text-align: left;
+        color: #ffffff;
+        border-radius: 40px;
+        margin: 0 15px;
+      }
+      #bounty-modal p {
+        text-align: center;
+        color: black;
+      }
+      .sidenav-overlay {
+        z-index: 900 !important;
+      }
+    </style>
+    <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo"><img src="./assets/logo-black.png"/></a>
+        <a href="#" data-target="mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+
+        <ul class="right hide-on-med-and-down valign-wrapper">
+          <li><a class="bug-bounty-btn" href="/bug-bounty.html">Bug bounty</a></li>
+          <li><a href="https://explorer.raiden.network/" target="_blank">Explorer</a></li>
+          <li><a href="/101.html">Raiden 101</a></li>
+          <li><a href="/micro.html">µRaiden</a></li>
+          <li><a href="/roadmap.html">Roadmap</a></li>
+          <li><a href="/token.html">Token</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
+        </ul>
+        <ul class="sidenav" id="mobile">
+          <li><a href="/bug-bounty.html">Bug bounty</a></li>
+          <li><a href="https://explorer.raiden.network/" target="_blank">Explorer</a></li>
+          <li><a href="/101.html">Raiden 101</a></li>
+          <li><a href="/micro.html">µRaiden</a></li>
+          <li><a href="/roadmap.html">Roadmap</a></li>
+          <li><a href="/token.html">Token</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+    <style>
+  .µhero {
+    width: 100%;
+    height: auto;
+    min-height: 350px;
+    margin: 0;
+    padding: 50px 8.5%;
+    background-color: black;
+    text-align: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .µhero-title {
+    font-size: 50px;
+    font-weight: 300;
+    line-height: 1.18;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  .µhero-subtitle {
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 1.16;
+    text-align: center;
+    color: #ffffff;
+  }
+  .status-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .status-box {
+    width: 260.5px;
+    height: 232px;
+    background-color: #ffffff;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.16);
+    padding: 30px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .status-box:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 8px;
+    background-image:linear-gradient(to right, #90e9fa, #00d4ff);
+    top: 0;
+    left: 0;
+  }
+  .micro-raiden-faq-box h2 {
+    text-transform: uppercase;
+    margin-top: 40px;
+  }
+  .micro-raiden-faq-box h2 span {
+    text-transform: none;
+    padding-left: 7px;
+  }
+</style>
+
+<section class="µhero">
+  <div>
+    <h1 class="µhero-title" style="font-size:60px;">µRaiden</h1>
+    <p class="µhero-subtitle">A payment channel framework for fast<br>& free off-chain ERC20 token transfers</p>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <h1>Micropayments for Ethereum</h1>
+    <p class="x-long">µRaiden (read: Micro Raiden) is a payment channel framework for frequent, fast and free ERC20 token based micropayments between two parties. It comes as a set of open source <a target="_blank" href="https://github.com/raiden-network/microraiden/blob/master/microraiden">libraries</a>, <a target="_blank" href="https://github.com/raiden-network/microraiden/blob/master/README.md">documentation</a>, and
+    <a target="_blank" href="https://github.com/raiden-network/microraiden/tree/master/microraiden/examples">code examples</a> for multiple use cases. Whereas its big brother the <a href="https://raiden.network/101.html">Raiden Network</a> aims to allow for multihop transfers via a network of bidirectional payment channels, µRaiden already now enables to make micropayments through unidirectional payment channels.</p>
+  </div>
+</section>
+<section class="grey">
+  <div class="container">
+    <h1 class="blue">Status</h1>
+    <div class="status-container">
+      <div class="status-box">
+        <p>µRaiden is live on the Ethereum mainnet. Find the latest release on <a target="_blank" href="https://github.com/raiden-network/microraiden/releases">github</a>.</p>
+      </div>
+      <div class="status-box">
+        <p>Join in by contributing to our open source <a target="_blank" href="https://github.com/raiden-network/raiden/blob/master/CONTRIBUTING.md#creating-a-pull-request">code base</a>, or implement µRaiden in your DApp!</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="use-cases">
+  <div class="container">
+    <h1 class="blue">Built on µRaiden</h1>
+    <p>Business models involving frequent payments between the client and the service provider are not efficiently possible on current blockchains due to slow confirmation times and high transaction fees. Using µRaiden, service providers can comfortably charge per-use of for example APIs, digital content and utilities via micropayments in Ethereum based tokens.</p>
+    <div class="use-cases-box">
+      <div class="cases-text-box">
+        <h2><span class="first-line-span">.</span> IOT MARKETS</h2>
+        <p>Machines can also be customers in machine-to-machine markets. We do not discriminate. The increasing demand for IoT or more general M2M (machine-to-machine) applications is evident in today's industry. Utilities, data storage, data usage, XaaS services, and APIs are all services that usually offer rate limits or subscription models because charging on a per-use basis is infeasible. With µRaiden, per-use charging finally becomes possible.</p>
+      </div>
+      <div class="right-image-box">
+        <iframe width="448" height="252" src="https://www.youtube-nocookie.com/embed/kZ_1jgTeijo?rel=0&amp;controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="use-cases-box">
+      <div class="left-image-box hide-on-small-only">
+        <iframe width="448" height="252" src="https://www.youtube-nocookie.com/embed/QZFbHyagVCc?rel=0&amp;controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+      <div class="cases-text-box">
+        <h2><span class="first-line-span">.</span> PAY PER USE</h2>
+        <p>Micropayments are becoming an increasingly attractive alternative to intrusive advertisement and subscription walls.
+        µRaiden gives users the option to decide on a pay-per-use basis whether they would rather endure ads or pay for a premium experience.
+        Customers would not need to engage in the commitment of a monthly subscription model.</p>
+      </div>
+      <div class="hide-on-med-and-up left-image-box">
+        <iframe width="448" height="252" src="https://www.youtube-nocookie.com/embed/QZFbHyagVCc?rel=0&amp;controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="grey">
+  <div class="container">
+    <h1>FAQ</h1>
+    <div class="micro-raiden-faq-box">
+      <div id="raiden">
+        <h2>How does <span>µ</span>Raiden compare to the Raiden Network?</h2>
+        <div>
+          <p class="left-align">µRaiden supports efficient off-chain token transfers to predetermined receivers (many-to-one). µRaiden uses the Raiden Network's most basic building block, namely payment channels, and turns them into an easy to use off-the-shelf system.</p>
+          <p class="left-align">µRaiden is cheaper, simpler to use, and more specialized to a smaller range of applications. µRaiden does not support multihop transfer fees, and therefore only allows to send tokens unidirectionally to predetermined receivers.</p>
+          <p class="left-align">The Raiden Network will remove this limitation and allow to transfer tokens between any two parties in the Raiden Network.</p>
+        </div>
+      </div>
+      <div id="raidennetwork">
+        <h2>What fees are there?</h2>
+        <div>
+          <p class="left-align">In µRaiden, off-chain transfers cost ZERO fees. Only opening and closing payment channels incur standard Ethereum gas fees. </p>
+        </div>
+      </div>
+      <div id="solutions">
+        <h2>How secure is <span>µ</span>Raiden?</h2>
+        <div>
+          <p class="left-align">µRaiden relies on Ethereum's own security. Only the sender and receiver, identified by their respective private keys, are able to interact with their channel, both on-chain and off-chain.</p>
+        </div>
+      </div>
+      <div id="scalability">
+        <h2>How can I setup a <span>µ</span>Raiden application?</h2>
+        <div>
+          <p class="left-align">Please visit our <a target="_blank" href="https://github.com/raiden-network/microraiden">GitHub</a> repository for instructions.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<style>
+  .footer {
+    background: black;
+    color: white;
+  }
+  .footer .container {
+    width: 90%;
+  }
+  .footer a {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.55;
+    text-align: left;
+    color: #ffffff;
+    display: block;
+  }
+  .footer a:hover {
+    opacity: 0.5;
+  }
+  .footer-title {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.55;
+    text-align: left;
+    color: #ffffff;
+    font-weight: bold;
+    letter-spacing: 0.6px;
+  }
+  .footer-box {
+    display: flex;
+    justify-content: space-between;
+    padding: 0!important;
+  }
+  .footer-box div {
+    padding: 0 10px;
+  }
+  .blog-link {
+    margin-bottom: 30px;
+  }
+</style>
+
+<section class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h2 class="footer-title">Latest blog post</h2>
+        <script language="JavaScript" src="https://feed2js.org//feed2js.php?src=https%3A%2F%2Fmedium.com%2Ffeed%2Fraiden-network&num=1&targ=y&utf=y"  charset="UTF-8" type="text/javascript"></script>
+        <noscript>
+          <a class="blog-link" href="https://feed2js.org//feed2js.php?src=https%3A%2F%2Fmedium.com%2Ffeed%2Fraiden-network&num=1&targ=y&utf=y&html=y">View RSS feed</a>
+        </noscript>
+      </div>
+      <div class="col l6 s12 footer-box">
+        <div>
+          <h2 class="footer-title">Development</h2>
+          <a rel="noopener noreferrer" target="_blank" href="http://www.github.com/raiden-network/raiden/?fref=ts">Raiden Network Github</a>
+          <a rel="noopener noreferrer" target="_blank" href="http://raiden-network.readthedocs.io/en/stable/">Raiden Network Docs</a>
+          <a rel="noopener noreferrer" target="_blank" href="https://github.com/raiden-network/microraiden">µRaiden Github</a>
+          <a rel="noopener noreferrer" target="_blank" href="http://microraiden.readthedocs.io">µRaiden Docs</a>
+          <a rel="noopener noreferrer" href="https://explorer.raiden.network/" target="_blank">Explorer</a>
+        </div>
+        <div>
+          <h2 class="footer-title">Community</h2>
+          <a rel="noopener noreferrer" href="https://twitter.com/raiden_network" target="_blank">Twitter</a>
+          <a rel="noopener noreferrer" href="https://medium.com/raiden-network" target="_blank">Blog</a>
+          <a rel="noopener noreferrer" href="https://www.reddit.com/r/raidennetwork/" target="_blank">Reddit</a>
+          <a rel="noopener noreferrer" href="https://www.youtube.com/channel/UCoUP_hnjUddEvbxmtNCcApg" target="_blank">Youtube</a>
+          <a rel="noopener noreferrer" href="https://gitter.im/raiden-network/raiden" target="_blank">Dev chat</a>
+        </div>
+        <div>
+          <h2 class="footer-title">Organization</h2>
+          <a target="_blank" href="https://angel.co/brainbot-group/jobs">We're hiring!</a>
+          <a rel="noopener noreferrer" href="/privacy.html">Privacy Policy, Disclaimer & Imprint</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/jquery.fittext.js"></script>
+<script src="js/wow.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="js/creative.js"></script>
+
+<!-- Scroll the FAQ -->
+<script src="js/smooth-scroll.js"></script>
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+
+  </body>
+</html>

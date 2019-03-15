@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+  <head>
+  <title>Raiden Network</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Raiden Network is an off-chain scaling solution, enabling near-instant, low-fee and scalable payments.">
+  <meta charset="UTF-8"> <!--Encoding -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!--Movile first -->
+
+  <link  rel="icon" href="../favicon.ico">
+  <!--JQuery -->
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  
+  <link rel="stylesheet" type="text/css" href=/css/materialize.min.css>
+  <script type="text/javascript" src=/js/materialize.min.js></script>
+  <script type="text/javascript" src=/js/inicializate.js></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href=/css/style.css>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <!-- Plugin CSS -->
+  <link rel="stylesheet" href="css/animate.min.css" type="text/css">
+
+   <!-- Custom scrollbar -->
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+</head>
+  <body>
+    <style>
+      .brand-logo img {
+        height: 40px;
+        margin: 12px 0;
+      }
+      .bug-bounty-btn {
+        border-radius: 11.5px;
+        box-shadow: 0 0 1.5px 0 rgba(0, 0, 0, 0.16);
+        background-image: linear-gradient(to right, #90e9fa, #00d4ff);
+        color: white;
+        font-family: 'Roboto', sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 2.2;
+        text-align: left;
+        color: #ffffff;
+        border-radius: 40px;
+        margin: 0 15px;
+      }
+      #bounty-modal p {
+        text-align: center;
+        color: black;
+      }
+      .sidenav-overlay {
+        z-index: 900 !important;
+      }
+    </style>
+    <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo"><img src="./assets/logo-black.png"/></a>
+        <a href="#" data-target="mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+
+        <ul class="right hide-on-med-and-down valign-wrapper">
+          <li><a class="bug-bounty-btn" href="/bug-bounty.html">Bug bounty</a></li>
+          <li><a href="https://explorer.raiden.network/" target="_blank">Explorer</a></li>
+          <li><a href="/101.html">Raiden 101</a></li>
+          <li><a href="/micro.html">µRaiden</a></li>
+          <li><a href="/roadmap.html">Roadmap</a></li>
+          <li><a href="/token.html">Token</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
+        </ul>
+        <ul class="sidenav" id="mobile">
+          <li><a href="/bug-bounty.html">Bug bounty</a></li>
+          <li><a href="https://explorer.raiden.network/" target="_blank">Explorer</a></li>
+          <li><a href="/101.html">Raiden 101</a></li>
+          <li><a href="/micro.html">µRaiden</a></li>
+          <li><a href="/roadmap.html">Roadmap</a></li>
+          <li><a href="/token.html">Token</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+    <style>
+  table {
+    background-color: #ffffff;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.16);
+  }
+  th {
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 2;
+    letter-spacing: 1.1px;
+    text-align: left;
+    color: #676767;
+  }
+  tr {
+    height: 53px;
+  }
+  td, th {
+    border: 1px solid #fafafa;
+    text-align: left;
+    padding: 8px 15px;
+  }
+  tr:nth-child(even) {
+    background-color: #fafafa;
+  }
+
+  .icon-row {
+    background: black;
+    width: 54px;
+    text-align: center;
+  }
+  .icon-row img {
+    max-width: 17px;
+  }
+  .table-title {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.36;
+    text-align: left;
+    color: #000000;
+    padding: 0;
+  }
+  tr:nth-child(even) .table-title {
+    background: #fafafa;
+  }
+  .status-text {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.36;
+    color: #000000;
+    min-width: 296px;
+    max-width: 296px;
+  }
+  .collapsible {
+    border: solid 0px transparent !important;
+    margin: 0;
+    box-shadow: 0 0px 0px 0 rgba(0,0,0,0), 0 0 0 0 rgba(0,0,0,0), 0 0 0 0 rgba(0,0,0,0);
+  }
+  .collapsible-header {
+    border-bottom: 0px solid transparent;
+    padding: 14px 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .collapsible-body {
+    padding: 0;
+    margin-top: 0;
+    border-bottom: solid 0px transparent;
+  }
+  .collapsible-header img {
+    height: 7px;
+  }
+  .active .collapsible-header img {
+    transform: rotate(180deg);
+  }
+  .collapsible-body span {
+    display: block;
+    padding-left: 20px;
+    position: relative;
+  }
+  .collapsible-body span::before {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #00d0f6;
+    border-radius: 50%;
+    left: 4px;
+    top: 6px;
+  }
+</style>
+
+<section>
+  <div class="container">
+    <h1>Roadmap</h1>
+    <p>The Raiden Network is being built in incremental stages with more features being added along the development process. Below you find already implemented and future features and enhancements to the protocol. You can follow more detailed updates on the development progress in the weekly <a href="https://www.reddit.com/r/raidennetwork/" target="_blank"> GitHub activity summaries on Reddit</a> and on the <a href="https://medium.com/raiden-network" target="_blank"> Raiden Blog</a>.</p>
+    <p>The roadmap presents major features and components integrated up to and including the Ithaca milestone. Please note that this roadmap doesn’t imply any guarantees or promises on future development items but should rather be seen as one envisaged path that could be taken by the Raiden project.</p>
+    <br/>
+    <br/>
+    <table>
+      <tr>
+        <th></th>
+        <th>What (Feauture / Component)</th>
+        <th class="hide-on-small-only">Status</th>
+      </tr>
+      <tr>
+        <td class="icon-row"><img src="./assets/check.svg"/></td>
+        <td>
+          <ul class="collapsible">
+            <li>
+              <p class="table-title collapsible-header">µRaiden - unidirectional many-to-one payment channels <img src="./assets/down.svg"/></p>
+              <p class="collapsible-body"><a href="/micro.html">µRaiden</a> is the first stepping stone towards the full Raiden Network. It's a payment channel framework for frequent, fast and free ERC20-token-based micropayments between two parties. These payment channels are unidirectional and many-to-one.</p>
+            </li>
+          </ul>
+        </td>
+        <td class="status-text hide-on-small-only">Live on main net since 01.12.2017</td>
+      </tr>
+      <tr>
+        <td class="icon-row"><img src="./assets/check.svg"/></td>
+        <td>
+          <ul class="collapsible">
+            <li>
+              <p class="table-title collapsible-header">Opening, closing and settlement of payment channels including single and multi-hop transfers <img src="./assets/down.svg"/></p>
+              <p class="collapsible-body">Core functionalities of the payment channel network: Users can open, close and settle payment channels with multiple parties. Users can send tokens directly to the recipient using an open channel as well as sending payments to a third party with no direct connection by routing the payment via other payment channels.</p>
+            </li>
+          </ul>
+        </td>
+        <td class="status-text hide-on-small-only">Included in Raiden testnet releases</td>
+      </tr>
+      <tr>
+        <td class="icon-row"><img src="./assets/check.svg"/></td>
+        <td>
+          <ul class="collapsible">
+            <li>
+              <p class="table-title collapsible-header">Raiden REST API <img src="./assets/down.svg"/></p>
+              <p class="collapsible-body">REST API with endpoints for all functionalities. The API enables dApp developers to easily build applications using the Raiden Network.</p>
+            </li>
+          </ul>
+        </td>
+        <td class="status-text hide-on-small-only">Included in Raiden testnet releases</td>
+      </tr>
+      <tr>
+        <td class="icon-row"><img src="./assets/check.svg"/></td>
+        <td>
+          <ul class="collapsible">
+            <li>
+              <p class="table-title collapsible-header">WebUI <img src="./assets/down.svg"/></p>
+              <p class="collapsible-body">Graphical interface to use the basic functionalities of the Raiden Network built on the API.</p>
+            </li>
+          </ul>
+        </td>
+        <td class="status-text hide-on-small-only">Included in Raiden testnet releases</td>
+      </tr>
+      <tr>
+        <td class="icon-row"><img src="./assets/check.svg"/></td>
+        <td>
+          <ul class="collapsible">
+            <li>
+              <p class="table-title collapsible-header">Routing 1.0 <img src="./assets/down.svg"/></p>
+              <p class="collapsible-body">A multi-hop transfer can be conducted using the routing 1.0 algorithm. However, this might not be the most efficient route since there is only a local view of channel balances.</p>
+            </li>
+          </ul>
+        </td>
+        <td class="status-text hide-on-small-only">Included in Raiden testnet releases</td>
+      </tr>
+      <tr>
+        <td class="icon-row"><img src="./assets/check.svg"/></td>
+        <td>
+          <ul class="collapsible">
+            <li>
+              <p class="table-title collapsible-header">Channel top up <img src="./assets/down.svg"/></p>
+              <p class="collapsible-body">Topping up the balance of existing payment channels by sending tokens into escrow. This is an on-chain transaction.</p>
+            </li>
+          </ul>
+        </td>
+        <td class="status-text hide-on-small-only">Included in Raiden testnet releases</td>
+      </tr>
+
+
+      <tr>
+        <td class="icon-row"><img src="./assets/check.svg"/></td>
+        <td>
+          <ul class="collapsible">
+            <li>
+              <p class="table-title collapsible-header">Automatically joining a token network and connecting to peers <img src="./assets/down.svg"/></p>
+              <p class="collapsible-body">Raiden supports first time users and simplifies usage by automatically joining token networks of the respective tokens held by connecting to peers and opening channels with them.</p>
+            </li>
+          </ul>
+        </td>
+        <td class="status-text hide-on-small-only">Included in Raiden testnet releases</td>
+      </tr>
+      <tr>
+        <td class="icon-row"><img src="./assets/check.svg"/></td>
+        <td>
+          <ul class="collapsible">
+            <li>
+              <p class="table-title collapsible-header">Refactored smart contracts <img src="./assets/down.svg"/></p>
+              <p class="collapsible-body">Contracts were optimized for gas by using one contract per token network. Additionally, locks can now be unlocked in a single transaction batch. Finally, thanks to the Secret Registry contract, we achieve constant time lock expiration.</p>
+            </li>
+          </ul>
+        </td>
+        <td class="status-text hide-on-small-only">Included in Raiden testnet releases</td>
+      </tr>
+      <tr>
+        <td class="icon-row"><img src="./assets/check.svg"/></td>
+        <td>
+          <ul class="collapsible">
+            <li>
+              <p class="table-title collapsible-header">Reliable transport layer <img src="./assets/down.svg"/></p>
+              <p class="collapsible-body">The Raiden Network is using Matrix as the transport protocol for exchanging messages between the Raiden nodes.</p>
+            </li>
+          </ul>
+        </td>
+        <td class="status-text hide-on-small-only">Included in Raiden testnet releases</td>
+      </tr>
+      <tr>
+        <td class="icon-row"><img src="./assets/check.svg"/></td>
+        <td>
+          <ul class="collapsible">
+            <li>
+              <p class="table-title collapsible-header">Recoverability <img src="./assets/down.svg"/></p>
+              <p class="collapsible-body">Recoverability is ensured in case of an irregular shutdown of the Raiden node. This feature is crucial to prevent the loss of data in case a Raiden node shuts down unexpectedly (e.g. due to a power outage).</p>
+            </li>
+          </ul>
+        </td>
+        <td class="status-text hide-on-small-only">Included in Raiden testnet releases</td>
+      </tr>
+      <tr>
+        <td class="icon-row"><img src="./assets/check.svg"/></td>
+        <td>
+          <ul class="collapsible">
+            <li>
+              <p class="table-title collapsible-header">Raiden Network Explorer (status page) <img src="./assets/down.svg"/></p>
+              <p class="collapsible-body">The Raiden Network Explorer gives an overview of network statistics and visualizes the live status of the payment channel networks.</p>
+            </li>
+          </ul>
+        </td>
+        <td class="status-text hide-on-small-only">Live: <a target="_blank" href="https://explorer.raiden.network">explorer.raiden.network</a> </td>
+      </tr>
+      <tr>
+        <td class="icon-row"><img src="./assets/check.svg"/></td>
+        <td>
+          <ul class="collapsible">
+            <li>
+              <p class="table-title collapsible-header">Red Eyes Release on Mainnet <img src="./assets/down.svg"/></p>
+              <p class="collapsible-body">
+                The alpha testing version of the Raiden Network containing all above features on the Ethereum Mainnet with safety limits:
+                <span>Total maximum value (sum of all channel deposits) contained in smart contract: 250 ETH</span>
+                <span>Limited to one token network: WETH (wrapped Ether)</span>
+                <span>Maximum deposit in each payment channel: 0.15 ETH (0.075 per direction/node)</span>
+                <span>One-time use Deprecation Switch</span>
+                Read more about the implemented safety measures of Red Eyes <a href="https://medium.com/raiden-network/update-on-safety-measures-for-red-eyes-release-and-the-bug-bounty-22c4855a8623">here</a>.
+              </p>
+            </li>
+          </ul>
+        </td>
+        <td class="status-text hide-on-small-only">
+          Live:  <a target="_blank" href="https://github.com/raiden-network/raiden/releases/tag/v0.100.1">Release v0.100.1 “Red Eyes”</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="icon-row"><img src="./assets/clock.svg"/></td>
+        <td>
+          <ul class="collapsible">
+            <li>
+              <p class="table-title collapsible-header">Channel withdraw <img src="./assets/down.svg"/></p>
+              <p class="collapsible-body">This function enables users to withdraw funds from open payment channels without the need to close them.</p>
+            </li>
+          </ul>
+        </td>
+        <td class="status-text hide-on-small-only">Future</td>
+      </tr>
+      <tr>
+        <td class="icon-row"><img src="./assets/clock.svg"/></td>
+        <td>
+          <ul class="collapsible">
+            <li>
+              <p class="table-title collapsible-header">Atomic Token Swaps <img src="./assets/down.svg"/></p>
+              <p class="collapsible-body">Allow to atomically exchange tokens off-chain. This can be used to build state channel based decentralized exchanges on top.</p>
+            </li>
+          </ul>
+        </td>
+        <td class="status-text hide-on-small-only">Future</td>
+      </tr>
+      <tr>
+        <td class="icon-row"><img src="./assets/clock.svg"/></td>
+        <td>
+          <ul class="collapsible">
+            <li>
+              <p class="table-title collapsible-header">Cooperative Settle <img src="./assets/down.svg"/></p>
+              <p class="collapsible-body">With a cooperative settlement of a payment channel, less on-chain transactions are required. Hence, if two parties agree on a cooperative settlement of their channel, the closing of the channel is cheaper.</p>
+            </li>
+          </ul>
+        </td>
+        <td class="status-text hide-on-small-only">Future</td>
+      </tr>
+      <tr>
+        <td class="icon-row"><img src="./assets/clock.svg"/></td>
+        <td>
+          <ul class="collapsible">
+            <li>
+              <p class="table-title collapsible-header">Fee model for channel balancing <img src="./assets/down.svg"/></p>
+              <p class="collapsible-body">Balanced channels maximise the odds to facilitate transfers throughout the network. By setting fees for mediating transfers, nodes can incentivise the balancing of their channels.</p>
+            </li>
+          </ul>
+        </td>
+        <td class="status-text hide-on-small-only">Future</td>
+      </tr>
+      <tr>
+        <td class="icon-row"><img src="./assets/clock.svg"/></td>
+        <td>
+          <ul class="collapsible">
+            <li>
+              <p class="table-title collapsible-header">Raiden Service Bundle <img src="./assets/down.svg"/></p>
+              <p class="collapsible-body">The Raiden Service Bundle (RSB) will enable third parties to offer services like pathfinding and monitoring to users. </p>
+            </li>
+          </ul>
+        </td>
+        <td class="status-text hide-on-small-only">Future</td>
+      </tr>
+      <tr>
+        <td class="icon-row"><img src="./assets/clock.svg"/></td>
+        <td>
+          <ul class="collapsible">
+            <li>
+              <p class="table-title collapsible-header">Pathfinding services <img src="./assets/down.svg"/></p>
+              <p class="collapsible-body">As part of the RSB, pathfinding services will support users in finding the cheapest way to route a payment. </p>
+            </li>
+          </ul>
+        </td>
+        <td class="status-text hide-on-small-only">Future</td>
+      </tr>
+      <tr>
+        <td class="icon-row"><img src="./assets/clock.svg"/></td>
+        <td>
+          <ul class="collapsible">
+            <li>
+              <p class="table-title collapsible-header">Monitoring services <img src="./assets/down.svg"/></p>
+              <p class="collapsible-body">As part of the RSB, monitoring services will watch a users channel when he is not online. In case one of the channels gets closed, the monitoring service can properly close and settle on behalf of the user.</p>
+            </li>
+          </ul>
+        </td>
+        <td class="status-text hide-on-small-only">Future</td>
+      </tr>
+    </table>
+  </div>
+</section>
+<style>
+  .footer {
+    background: black;
+    color: white;
+  }
+  .footer .container {
+    width: 90%;
+  }
+  .footer a {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.55;
+    text-align: left;
+    color: #ffffff;
+    display: block;
+  }
+  .footer a:hover {
+    opacity: 0.5;
+  }
+  .footer-title {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.55;
+    text-align: left;
+    color: #ffffff;
+    font-weight: bold;
+    letter-spacing: 0.6px;
+  }
+  .footer-box {
+    display: flex;
+    justify-content: space-between;
+    padding: 0!important;
+  }
+  .footer-box div {
+    padding: 0 10px;
+  }
+  .blog-link {
+    margin-bottom: 30px;
+  }
+</style>
+
+<section class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h2 class="footer-title">Latest blog post</h2>
+        <script language="JavaScript" src="https://feed2js.org//feed2js.php?src=https%3A%2F%2Fmedium.com%2Ffeed%2Fraiden-network&num=1&targ=y&utf=y"  charset="UTF-8" type="text/javascript"></script>
+        <noscript>
+          <a class="blog-link" href="https://feed2js.org//feed2js.php?src=https%3A%2F%2Fmedium.com%2Ffeed%2Fraiden-network&num=1&targ=y&utf=y&html=y">View RSS feed</a>
+        </noscript>
+      </div>
+      <div class="col l6 s12 footer-box">
+        <div>
+          <h2 class="footer-title">Development</h2>
+          <a rel="noopener noreferrer" target="_blank" href="http://www.github.com/raiden-network/raiden/?fref=ts">Raiden Network Github</a>
+          <a rel="noopener noreferrer" target="_blank" href="http://raiden-network.readthedocs.io/en/stable/">Raiden Network Docs</a>
+          <a rel="noopener noreferrer" target="_blank" href="https://github.com/raiden-network/microraiden">µRaiden Github</a>
+          <a rel="noopener noreferrer" target="_blank" href="http://microraiden.readthedocs.io">µRaiden Docs</a>
+          <a rel="noopener noreferrer" href="https://explorer.raiden.network/" target="_blank">Explorer</a>
+        </div>
+        <div>
+          <h2 class="footer-title">Community</h2>
+          <a rel="noopener noreferrer" href="https://twitter.com/raiden_network" target="_blank">Twitter</a>
+          <a rel="noopener noreferrer" href="https://medium.com/raiden-network" target="_blank">Blog</a>
+          <a rel="noopener noreferrer" href="https://www.reddit.com/r/raidennetwork/" target="_blank">Reddit</a>
+          <a rel="noopener noreferrer" href="https://www.youtube.com/channel/UCoUP_hnjUddEvbxmtNCcApg" target="_blank">Youtube</a>
+          <a rel="noopener noreferrer" href="https://gitter.im/raiden-network/raiden" target="_blank">Dev chat</a>
+        </div>
+        <div>
+          <h2 class="footer-title">Organization</h2>
+          <a target="_blank" href="https://angel.co/brainbot-group/jobs">We're hiring!</a>
+          <a rel="noopener noreferrer" href="/privacy.html">Privacy Policy, Disclaimer & Imprint</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  </body>
+</html>
